@@ -7,6 +7,3 @@ function fetchImages(searchQuery, page = 1, perPage = 12) {
   ).then(r => r.json());
 }
 export default fetchImages;
-
-
-
