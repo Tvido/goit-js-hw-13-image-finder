@@ -1,41 +1,22 @@
-body {
-  min-height: 100vh;
-  margin: 0;
-  padding: 40px;
-  display: flex;
-  justify-content: center;
-  background-image: url('../images/bg-pattern.png');
-}
-
-.intro {
-  text-align: center;
-}
-
-.intro h1 {
-  margin-top: 0;
-  font-weight: 500;
-  font-size: 40px;
-}
-
-.intro img {
+/* .intro img {
   display: block;
   max-width: 100%;
   height: auto;
-}
+} */
 
 .box {
   width: 300px;
   height: 50px;
 }
 
-.container-4 {
+.container {
   overflow: hidden;
   width: 300px;
   vertical-align: middle;
   white-space: nowrap;
 }
 
-.container-4 input#search {
+.container {
   width: 300px;
   height: 50px;
   background: #2b303b;
@@ -47,37 +28,96 @@ body {
   border-radius: 10px;
 }
 
-.container-4 button.icon {
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border: none;
-  background: #232833;
-  height: 50px;
-  width: 50px;
-  color: #4f5b66;
-  opacity: 0;
-  font-size: 10pt;
-  transition: all 0.55s ease;
-}
-
-.container-4:hover button.icon,
-.container-4:active button.icon,
-.container-4:focus button.icon {
+.container:hover button.icon,
+.container:active button.icon,
+.container:focus button.icon {
   outline: none;
   opacity: 1;
   margin-left: -50px;
 }
 
-.container-4:hover button.icon:hover {
+.container:hover button.icon:hover {
   background: white;
 }
 
-.list {
-  font-weight: 400;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.card-img {
+body {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.5;
+  background-image: url('../images/bg-pattern.png');
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  width: 150px;
+  height: 35px;
+  background: #2b303b;
+  border: none;
+  font-size: 10px;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn.is-hidden {
+  display: none;
+}
+
+.btn > .spinner.is-hidden {
+  display: none;
+}
+
+/* Article List */
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 5px;
+}
+
+.gallery li {
+  height: 450px;
+  overflow: hidden;
+}
+
+.gallery img {
   display: block;
-  width: 100%;
-  border: 1px solid grey;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.gallery a {
+  text-decoration: none;
+  color: #2a2a2a;
+}
+
+.gallery .photo-card {
+  margin-bottom: 30px;
+}
+
+.stats {
+  height: 10%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
