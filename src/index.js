@@ -9,6 +9,7 @@ import LoadMoreBtn from './js/components/load-more-btn';
 const refs = {
     gallery: document.querySelector(".gallery"),
     searchForm: document.querySelector("#search-form"),
+    scrollElem: document.getElementById('scrollToTop'),
 };
 
 const loadMoreBtn = new LoadMoreBtn({
@@ -47,4 +48,18 @@ function renderMarkup(hits) {
 
 function clearHits() {
     refs.gallery.innerHTML = '';
+}
+
+refs.scrollElem.addEventListener('click', scrollToTop);
+
+window.addEventListener('scroll', function () {
+  if (pageYOffset > 100) {
+    refs.scrollElem.style.opacity = '1';
+  } else {
+    refs.scrollElem.style.opacity = '0';
+  }
+});
+
+function scrollToTop() {
+  window.scrollTo(500, 0);
 }

@@ -114,3 +114,37 @@ body {
   text-align: center;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
+
+.scroll-up {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  background-color: transparent;
+  border-radius: 50%;
+  border-style: none;
+  outline-style: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  opacity: 0;
+  transition: all 0.5s ease-in;
+}
+
+.scroll-svg {
+  margin: auto;
+
+  width: 40px;
+  height: 40px;
+  fill: rgba(0, 0, 0, 0.25);
+}
+
+.scroll-up:hover {
+  background-color: rgba(0, 0, 0, 0.22);
+}
+
+.scroll-svg:hover {
+  fill: #ffffff;
+}
