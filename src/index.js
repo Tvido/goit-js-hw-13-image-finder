@@ -9,7 +9,6 @@ import LoadMoreBtn from './js/components/load-more-btn';
 const refs = {
     gallery: document.querySelector(".gallery"),
     searchForm: document.querySelector("#search-form"),
-    // loadBtn: document.querySelector('[data-action="load-more"]'),
 };
 
 const loadMoreBtn = new LoadMoreBtn({
@@ -17,11 +16,9 @@ const loadMoreBtn = new LoadMoreBtn({
     hidden: true,
 });
 const apiService = new ApiService();
-// console.log(loadMoreBtn);
 
 
 refs.searchForm.addEventListener('input', debounce(onSearch, 500));
-// refs.loadBtn.addEventListener('click', onLoadMore);
 loadMoreBtn.refs.button.addEventListener('click', fetchHits);
 
 function onSearch(e) {
@@ -31,11 +28,10 @@ function onSearch(e) {
 
     loadMoreBtn.show();
     apiService.resetPage();
-    clearHits();
 
+    clearHits();
     fetchHits();
-    
-}
+    }
 
 function fetchHits() {
     loadMoreBtn.disable();
@@ -47,11 +43,7 @@ function fetchHits() {
 
 function renderMarkup(hits) {
     refs.gallery.insertAdjacentHTML('beforeend', hitsTpl(hits));
-     window.scrollTo({
-    top,
-    behavior: 'smooth',
-  });
-}
+    }
 
 function clearHits() {
     refs.gallery.innerHTML = '';
