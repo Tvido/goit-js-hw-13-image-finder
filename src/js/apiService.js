@@ -7,15 +7,23 @@ export default class ApiService {
     }
 
     fetchItems() {
-        const url = `${this.BASE_URL}/?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${this.KEY}`
+        try {
+            const url = `${this.BASE_URL}/?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${this.KEY}`
 
-        return fetch(url)
-            .then(r => r.json())
-            .then(data => {
-                this.page += 1;
-                return data.hits;
-            });
+            return fetch(url)
+                .then(r => r.json())
+                .then(data => {
+                    this.page += 1;
+                    return data.hits;
+                })
+        } catch (error) {
+            console.log(error);
+            if (error.name === 'SyntaxError') {
+                console.log('Error!')
+            }
+        }
     }
+
     resetPage() {
         this.page = 1;
     }
